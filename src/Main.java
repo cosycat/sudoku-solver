@@ -57,13 +57,13 @@ public class Main {
             sudokuField.setValue(i, firstEmptyPosition);
             solveSudokuRecursive(sudokuField);
             if (solved) {
-                System.out.println("already solved");
+                //System.out.println("already solved");
                 return;
             }
         }
         if (sudokuField.getValue(firstEmptyPosition) == SudokuField.EMPTY_VALUE) {
-            System.out.println("No Valid position found at Position " + firstEmptyPosition);
-            System.out.println(sudokuField);
+            //System.out.println("No Valid position found at Position " + firstEmptyPosition);
+            //System.out.println(sudokuField);
         }
         sudokuField.setValue(SudokuField.EMPTY_VALUE, firstEmptyPosition);
     }

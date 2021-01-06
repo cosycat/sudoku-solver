@@ -42,7 +42,7 @@ public class SudokuField {
     
     public boolean isValueValid(int value, int x, int y, boolean ignoreValuePresent) {
         if (getValue(x, y) != EMPTY_VALUE && !ignoreValuePresent) {
-            System.out.println(value + " invalid FULL at " + new Position(x, y));
+            //System.out.println(value + " invalid FULL at " + new Position(x, y));
             return false;
         }
         for (int i = 0; i < size; i++) {
@@ -50,7 +50,7 @@ public class SudokuField {
                     getValue(x, i) == value
                     || getValue(i, y) == value
             ) {
-                System.out.println(value + " invalid LINE at " + new Position(x, y));
+                //System.out.println(value + " invalid LINE at " + new Position(x, y));
                 return false;
             }
         }
@@ -58,7 +58,7 @@ public class SudokuField {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (getValue(fieldStart.x + i, fieldStart.y + j) == value) {
-                    System.out.println(value + " invalid BOX  at " + new Position(x, y));
+                    //System.out.println(value + " invalid BOX  at " + new Position(x, y));
                     return false;
                 }
             }
@@ -101,7 +101,7 @@ public class SudokuField {
     
     public void setValue(int value, Position position) {
         setValue(value, position.x, position.y);
-        System.out.println(position + ":= " + value);
+        //System.out.println(position + ":= " + value);
     }
     
     @Override
