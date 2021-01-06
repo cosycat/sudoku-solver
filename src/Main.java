@@ -26,7 +26,14 @@ public class Main {
     }
     
     private static boolean solved = false;
-    public static void solveSudokuRecursive(SudokuField sudokuField) {
+    public static SudokuField solveSudoku(SudokuField sudokuField) {
+        solved = false;
+        SudokuField copiedSudokuField = sudokuField.createCopy();
+        solveSudokuRecursive(copiedSudokuField);
+        return copiedSudokuField;
+    }
+    
+    private static void solveSudokuRecursive(SudokuField sudokuField) {
         Position firstEmptyPosition = null;
         outerloop:
         for (int x = 0; x < sudokuField.getSize(); x++) {
