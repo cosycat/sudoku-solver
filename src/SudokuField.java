@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SudokuField {
     
     public static int EMPTY_VALUE = 0;
@@ -68,6 +70,22 @@ public class SudokuField {
         return new Position((position.x / 3) * 3, (position.y / 3) * 3);
     }
     
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SudokuField that = (SudokuField) o;
+        if (field == null || that.field == null || size != that.size) return false;
+        for (int i = 0; i < size; i++) {
+            if (!Arrays.equals(field[i], that.field[i])) return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public int hashCode() {
+        return 0;
+    }
     
     public int getSize() {
         return this.size;
